@@ -67,6 +67,7 @@ table tb_route {
 
 action route() {
     modify_field(standard_metadata.egress_spec, port.port_id);
+    add_to_field(easy_route_hdr.num_valid, -1);
     // TODO: update your header
     remove_header(port);
 }

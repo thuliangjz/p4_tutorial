@@ -23,6 +23,9 @@ import struct
 
 def handle_pkt(pkt):
     pkt = str(pkt)
+    print("packet received")
+    print("length:%s"%(str(len(pkt))))
+    print("raw:%s"%(" ".join([hex(ord(x)) for x in pkt])))
     if len(pkt) < 12: return
     preamble = pkt[:8]
     preamble_exp = "\x00" * 8
